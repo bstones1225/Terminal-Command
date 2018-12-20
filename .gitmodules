@@ -1,0 +1,3 @@
+[submodule "node-greeting-app"]
+	path = node-greeting-app
+	url = git@github.com:bstones1225/Terminal-Command.git
