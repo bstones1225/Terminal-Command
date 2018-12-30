@@ -3,4 +3,4 @@
 	url = git@github.com:bstones1225/Terminal-Command.git
 [submodule "basic-node-operations"]
 	path = basic-node-operations
-	url = C:/Program Files/Git/basic-node-operations
+	url = ../basic-node-operations
