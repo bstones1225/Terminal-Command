@@ -1,0 +1,29 @@
+###Questions
+
+>1.Run the commands `sort`, `wc` and `uniq` on the commands.js file. Explain how they work and what the output was.
+
+A: `sort` sorts the actual code line by line. 'wc' gives newline, word, and byte counts for a file. `uniq` sorts but doesnt print duplicate lines.
+
+>2.Using the pipe (|) connect at least two commands and run it on commands.js. Explain what the output was and why the specific data was outputted.
+
+A: `sort commands.js | cat` has the contents sorted and then printed. `cat commands.js | sort` prints the contents, then sorts. `uniq commands.js | cat` removes the duplicates then prints the content of the file.
+
+>6.In this checkpoint, you encountered built-in JavaScript methods as well as the new ES6 syntax. Review the information below before attempting the programming challenge.
+
+
+```
+//the reverse command
+	 "r": function(stringName) {
+       const inputArray = stringName.toString().split("");
+       const reverseArray = [];
+       inputArray.forEach((element) => {
+ 		console.log(element);
+           reverseArray.push(element);
+           console.log(reverseArray);
+           
+	 });
+       reverseArray.reverse();
+       console.log(reverseArray.join(""));
+       
+   },
+```
