@@ -1,0 +1,85 @@
+###Questions
+
+>1.What is the difference between readdirSync and readdir?
+
+A: `readdirSync` is synchronous so it halts the program, while `readdir` doesnt 
+
+>2.What is the event loop and how does it handle asynchronous requests?
+
+A: Processes the event queue, and it handles asynchronous by having the operating system notify it when its done
+
+>3.Given the following code, specify whether the program is asynchronous and non-blocking or synchronous and blocking or synchronous and non-blocking.
+
+```
+const fs = require('fs');
+const file = fs.readFileSync('foo.txt');
+console.log(file.toString());
+```
+
+A: **Synchronous and blocking**
+
+>4.Given the following code, specify whether the program is asynchronous and non-blocking or synchronous and blocking or synchronous and non-blocking.
+
+```
+const fs = require('fs');
+fs.readFile('foo.txt', (err, file) => {
+ if (err) throw err;
+ console.log(file.toString());
+});
+console.log("test");
+```
+
+A: **Asynchronous and non-blocking**
+
+>5.In what order will the console.log statements execute in the code below?
+
+```
+const fs = require('fs');
+fs.readFile('foo.txt', (err, file) => {
+ if (err) throw err;
+ console.log("A");
+ console.log("B")
+});
+console.log("C");
+```
+
+A: C,A,B
+
+>6.`setTimeout` is a JavaScript function which calls a function after a set amount of milliseconds. Given the following code, explain in what sequence the functions will run and why.
+
+```
+function greeting() {
+ setTimeout(() => {
+   console.log("friend");
+ }, 100);
+}
+
+function hello(){
+ console.log("hello");
+}
+
+greeting();
+hello();
+```
+
+A: `hello()` will run first because the callback for `setTimeout()` is queued after the other functions.
+
+>7.Create a function which utilizes a callback. Make sure to add console.log statements to understand when your callback function is called.
+
+``` 
+var myCallback = function(err, data) {
+  if (err) throw err; // Check for the error and throw if it exists.
+  console.log('got data: '+data); // Otherwise proceed as usual.
+};
+
+var usingItNow = function(callback) {
+  callback(null, 'get it?'); // I dont want to throw an error, so I pass null for the error argument
+};
+
+usingItNow(myCallback);
+```
+
+
+
+
+
